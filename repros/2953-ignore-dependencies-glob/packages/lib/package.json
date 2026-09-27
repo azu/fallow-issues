@@ -1,0 +1,5 @@
+{
+  "name": "@repro/lib",
+  "type": "module",
+  "exports": { "./*": "./src/*.ts" }
+}

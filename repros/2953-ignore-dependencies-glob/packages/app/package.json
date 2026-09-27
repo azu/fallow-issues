@@ -1,0 +1,7 @@
+{
+  "name": "@repro/app",
+  "type": "module",
+  "private": true,
+  "dependencies": { "@repro/lib": "workspace:*" },
+  "exports": { ".": "./src/index.ts" }
+}

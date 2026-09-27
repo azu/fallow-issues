@@ -1,0 +1,17 @@
+{
+  "name": "fallow-issues",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.7.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "repro": "node scripts/reproduce.mjs",
+    "repro:2952": "node scripts/reproduce.mjs 2952",
+    "repro:2953": "node scripts/reproduce.mjs 2953"
+  },
+  "devDependencies": {
+    "fallow": "3.30.0"
+  }
+}
