@@ -1,0 +1,10 @@
+{
+  "name": "script-file-entries-repro",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "devDependencies": {
+    "oxfmt": "0.51.0",
+    "oxlint": "1.69.0"
+  }
+}

@@ -9,9 +9,13 @@
   "scripts": {
     "repro": "node scripts/reproduce.mjs",
     "repro:2952": "node scripts/reproduce.mjs 2952",
-    "repro:2953": "node scripts/reproduce.mjs 2953"
+    "repro:2953": "node scripts/reproduce.mjs 2953",
+    "repro:script-file-entries": "node scripts/reproduce.mjs script-file-entries"
   },
   "devDependencies": {
-    "fallow": "3.30.0"
+    "fallow": "3.30.0",
+    "knip": "6.38.0",
+    "oxfmt": "0.51.0",
+    "oxlint": "1.69.0"
   }
 }
