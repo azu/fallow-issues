@@ -1,10 +1,14 @@
-# Files passed to oxfmt become entry points, hiding unused files
+# Formatter and linter targets are treated as entry points, hiding unused files
 
 ## Problem
 
-Fallow treats formatting targets as entry points. Using `oxfmt` means the tool is used, but does not mean the files it formats are used by the application.
+Fallow treats formatting and linting targets as entry points in both `package.json` scripts and GitHub Actions `run` steps. Using `oxfmt` means the tool is used, but does not mean the files it formats are used by the application.
+
+This also reproduces with oxlint 1.69.0 and ESLint 9.39.1; oxfmt is used below as the minimal example.
 
 ## Reproduction
+
+[Reproduction repository](https://github.com/azu/fallow-issues/blob/main/repros/script-file-entries/README.md): run `pnpm install --frozen-lockfile` and `pnpm repro:script-file-entries` from the repository root.
 
 Tested with Fallow 3.30.0 and oxfmt 0.51.0.
 
@@ -35,7 +39,9 @@ Install dependencies, then run `fallow dead-code --no-cache`:
 - With the `fmt` script: `No issues found` (exit 0).
 - Without the `fmt` script: `src/dead.ts` is unused (exit 1).
 
-The formatter never needs to run. An explicit path (`oxfmt --check src/dead.ts`) also reproduces the problem. Putting `npx oxfmt --check "**/*.ts"` in a GitHub Actions `run` step has the same effect, even without package.json scripts.
+The formatter never needs to run. An explicit path (`oxfmt --check src/dead.ts`) also reproduces the problem.
+
+GitHub Actions also reproduces this independently: remove the `fmt` script and add a workflow step with `run: npx oxfmt --check "**/*.ts"`. Fallow still stops reporting `src/dead.ts` as unused.
 
 ## Expected behavior
 

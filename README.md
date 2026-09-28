@@ -28,7 +28,7 @@ The initial install requires network access. Workspace reproductions link local 
 | --- | --- | --- |
 | `repros/2952-imports-alias` | [#2952: Workspace dependency reported as unused through an imports alias](https://github.com/fallow-rs/fallow/issues/2952) | `#lib/hello` vs. `@repro/lib/hello` |
 | `repros/2953-ignore-dependencies-glob` | [#2953: Glob support in ignoreDependencies](https://github.com/fallow-rs/fallow/issues/2953) | No ignore, exact name, glob |
-| `repros/script-file-entries` | [Draft: Files passed to oxfmt become entry points, hiding unused files](repros/script-file-entries/ISSUE.md) | oxfmt / oxlint vs. Node execution; scripts / CI; Fallow vs. Knip |
+| `repros/script-file-entries` | [Draft: Formatter and linter targets are treated as entry points, hiding unused files](repros/script-file-entries/ISSUE.md) | oxfmt / oxlint vs. Node execution; scripts / CI; Fallow vs. Knip |
 
 For #2952, both cases use the same function; only the import specifier changes. For #2953, `@repro/lib` is deliberately unused and no alias is involved, so the glob reproduction does not depend on the alias bug.
 
